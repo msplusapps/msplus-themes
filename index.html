@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MSK Color Library</title>
+  <link rel="stylesheet" href="./msk-gradient.css">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #222;
+    }
+
+    /* 🧩 Grid layout */
+    #cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      width: 100%;
+      height: 130px;
+      color: white;
+      border-radius: 16px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    }
+
+    .card span {
+      background: rgba(0, 0, 0, 0.45);
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 999;
+    }
+
+    .toast.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 MSK Gradient Color Library</h1>
+
+  <div id="cards"></div>
+  <div class="toast" id="toast">Copied!</div>
+
+  <script>
+    async function loadGradients() {
+      try {
+        const response = await fetch('./msk-gradient.css');
+        const cssText = await response.text();
+
+        // 🔍 Find all .gradient-* classes
+        const regex = /\.gradient-[a-zA-Z0-9_-]+/g;
+        const matches = cssText.match(regex) || [];
+
+        // Clean duplicates and dots
+        const gradientClasses = [...new Set(matches.map(m => m.substring(1)))];
+
+        const container = document.getElementById('cards');
+        gradientClasses.forEach(cls => {
+          const card = document.createElement('div');
+          card.className = `card ${cls}`;
+          card.innerHTML = `<span>${cls}</span>`;
+          card.onclick = () => copyToClipboard(`.${cls}`);
+          container.appendChild(card);
+        });
+      } catch (err) {
+        console.error('Failed to load CSS file:', err);
+      }
+    }
+
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text);
+      const toast = document.getElementById('toast');
+      toast.innerText = `Copied ${text}`;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 1500);
+    }
+
+    // Load on page start
+    loadGradients();
+  </script>
+</body>
+</html>

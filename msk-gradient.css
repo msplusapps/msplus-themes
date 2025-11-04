@@ -1,0 +1,95 @@
+.gradient-primary {
+    background: linear-gradient(175deg, rgb(2, 1, 45), rgb(118, 85, 201));
+}
+
+.gradient-secondary {
+    background: linear-gradient(175deg, rgb(45, 29, 1), rgb(239, 88, 191));
+}
+
+.gradient-info {
+    background: linear-gradient(0deg, rgb(0, 145, 255), rgb(1, 208, 248));
+}
+
+.gradient-warning {
+    background: linear-gradient(192deg, rgb(229, 145, 83), rgb(246, 102, 26));
+}
+
+.gradient-danger {
+    background: linear-gradient(0deg, rgb(153, 0, 0), rgb(254, 41, 98));
+}
+
+.gradient-success {
+    background: linear-gradient(0deg, rgb(0, 153, 38), rgb(22, 70, 49));
+}
+
+.gradient-accent {
+    background: linear-gradient(90deg, rgb(26, 200, 200), rgb(209, 191, 67));
+}
+
+.gradient-pro {
+    background: linear-gradient(182deg, rgb(139, 169, 39), rgb(127, 116, 1));
+}
+
+.gradient-royal {
+    background: linear-gradient(182deg, rgb(183, 24, 212), rgb(9, 42, 135));
+}
+
+.gradient-tint {
+    background: linear-gradient(182deg, rgb(232, 230, 221), rgb(30, 59, 125));
+}
+
+.gradient-dark {
+    background: linear-gradient(182deg, rgb(22, 0, 56), rgb(0, 97, 68));
+}
+
+.gradient-baby {
+    background: linear-gradient(347deg, rgb(95, 59, 130), rgb(219, 29, 100));
+}
+
+.gradient-love {
+    background: linear-gradient(325deg, rgb(236, 33, 40), rgb(205, 79, 231));
+}
+
+.gradient-agro {
+    background: linear-gradient(153deg, rgb(36, 150, 53), rgb(98, 242, 57));
+}
+
+.gradient-nature {
+    background: linear-gradient(161deg, rgb(5, 73, 15), rgb(175, 190, 29));
+}
+
+.gradient-stone {
+    background: linear-gradient(25deg, rgb(100, 18, 85), rgb(252, 236, 146));
+}
+
+.gradient-mango {
+    background: radial-gradient(rgb(222, 121, 14), rgb(229, 62, 73));
+}
+
+.gradient-boss {
+    background: radial-gradient(rgb(73, 2, 137), rgb(17, 62, 137));
+}
+
+.gradient-build {
+    background: radial-gradient(rgb(107, 248, 51), rgb(98, 118, 65));
+}
+
+.gradient-rich {
+    background: radial-gradient(rgb(188, 137, 204), rgb(153, 54, 231));
+}
+
+.gradient-gentle {
+    background: radial-gradient(rgb(109, 250, 214), rgb(88, 160, 209));
+}
+
+.gradient-grace {
+    background: radial-gradient(rgb(217, 7, 188), rgb(244, 43, 142));
+}
+
+.gradient-akpan {
+    background: linear-gradient(182deg, rgb(200, 86, 100), rgb(51, 21, 68));
+}
+
+.gradient-peter {
+    background: linear-gradient(179deg, rgb(254, 224, 71), rgb(112, 100, 63));
+}
